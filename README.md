@@ -39,10 +39,22 @@ A web interface allowing candidate resumes to be filtered on a skill basis
 ```bash
 cd backend
 python -m venv venv
-# Linux/Mac:
-source venv/bin/activate
-# Windows:
 .\venv\Scripts\activate
 
 pip install -r requirements.txt
 uvicorn main:app --reload
+```
+
+#### Frontend Setup
+```bash
+cd frontend
+python -m venv venv
+.\venv\Scripts\activate
+
+pip install -r requirements.txt
+npm start
+```
+
+#### Docker Deployment
+```bash
+docker compose up -d --build
