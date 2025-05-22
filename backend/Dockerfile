@@ -13,7 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Safe copy operation
 RUN mkdir /safe_copy && \
     cp -r . /safe_copy && \
     chmod -R 755 /safe_copy
