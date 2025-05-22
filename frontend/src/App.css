@@ -1,0 +1,94 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Base Styles */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* Upload Area Styles */
+:root {
+  --primary: #3f51b5;
+  --secondary: #2196f3;
+  --surface: #ffffffdd;
+}
+
+/* Upload Area */
+.upload-area {
+  border: 2px dashed var(--primary);
+  border-radius: 16px;
+  padding: 48px;
+  max-width: 600px;
+  margin: 40px auto 0 auto;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--surface);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Hover + Animation */
+.upload-area:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.upload-area.active {
+  border-color: var(--secondary);
+  background-color: #e3f2fd;
+}
+
+/* Top Gradient Line */
+.upload-area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+/* Upload Icon */
+.upload-icon {
+  font-size: 4.5rem !important;
+  margin-bottom: 24px;
+  color: var(--primary);
+  transition: all 0.3s ease;
+}
+
+/* Dark Mode */
+.dark .upload-area {
+  background-color: #2c2c2c;
+  border-color: #888;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.main-content {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .upload-area {
+    padding: 32px;
+    margin: 0 16px;
+  }
+
+  h1 {
+    font-size: 2.5rem !important;
+    padding: 0 16px;
+  }
+}
